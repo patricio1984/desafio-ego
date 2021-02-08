@@ -631,8 +631,7 @@ p.modeldata-description {
     }
 
     .filter-container {
-        margin: 0 12px;
-        width: 90%;
+        width: 100%;
         padding: 0;
     }
 
