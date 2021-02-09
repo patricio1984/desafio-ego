@@ -25,7 +25,6 @@ const ModelsProvider = (props) => {
                     guardarAllModelo(modelos);
                     guardarModelos(modelos);
                     guardarModelo(modelo);
-                    localStorage.setItem("modelo", JSON.stringify(modelo));
 
                 } catch (error) {
                    console.log(error); 
