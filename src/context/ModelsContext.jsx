@@ -11,6 +11,7 @@ const ModelsProvider = (props) => {
 
         const { id } = modelo;
 
+
          //Cargar un modelo
          useEffect(() => {
              const consultarAPI = async () => {         
@@ -24,13 +25,14 @@ const ModelsProvider = (props) => {
                     guardarAllModelo(modelos);
                     guardarModelos(modelos);
                     guardarModelo(modelo);
+                    localStorage.setItem("modelo", JSON.stringify(modelo));
 
                 } catch (error) {
                    console.log(error); 
                 }
              }
              consultarAPI()
-         }, [id]);
+         }, [id, modelo]);
 
     return (
         <ModelsContext.Provider
