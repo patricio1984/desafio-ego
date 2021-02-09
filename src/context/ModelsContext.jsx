@@ -18,7 +18,7 @@ const ModelsProvider = (props) => {
                     const api = await fetch("https://challenge.agenciaego.tech/models");
                     const modelos = await api.json();
     
-                    const api2 = await fetch(`https://challenge.agenciaego.tech/models/${id}`);
+                    const api2 = await fetch(`https://challenge.agenciaego.tech/models/${id ? id : ""}`);
                     const modelo = await api2.json();
            
                     guardarAllModelo(modelos);

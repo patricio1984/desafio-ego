@@ -24,7 +24,7 @@ function App() {
                       <div className="bottom-line"></div>             
                   </nav>
                   <Switch>
-                  <Route exact path="/"><Redirect to="/models" /></Route>
+                  <Route exact path="/"><Redirect to="/models"/></Route>
                     <Route exact path='/models' component={Models} />
                     <Route exact path='/models/:id' component={FileModel} />
                   </Switch>
