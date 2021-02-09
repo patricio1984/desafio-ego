@@ -32,7 +32,7 @@ const ModelsProvider = (props) => {
                 }
              }
              consultarAPI()
-         }, [id, modelo]);
+         }, [id]);
 
     return (
         <ModelsContext.Provider
