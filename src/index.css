@@ -707,6 +707,11 @@ p.modeldata-description {
     .imgmodel-title1 {
         margin-right: 0;
     }
+
+    .filemodel-title {
+        margin: 120px auto;
+        margin-bottom: 0px;
+    }
 }
 
 @media (max-width: 566px) {
