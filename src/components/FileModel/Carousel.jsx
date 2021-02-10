@@ -30,8 +30,8 @@ const Carousel = () => {
                 {model_features ? model_features.map(model_feature => (
                     <div className="modelfeature-card" key={modelo.id}>
                     <img className="modelfeature-image" src={`https://challenge.agenciaego.tech${model_feature.photo}`} alt={`Imagen de ${model_feature.name}`}/>
-                    <h3>{model_feature.name}</h3>
-                    <p>{model_feature.description}</p>
+                    <h3 className="modelfeature-title">{model_feature.name}</h3>
+                    <p className="modelfeature-content">{model_feature.description}</p>
                     </div>
                 )) : ""}
     

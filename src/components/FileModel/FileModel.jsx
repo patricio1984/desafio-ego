@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ModelsContext } from "../../context/ModelsContext";
-import Carousel from "./Carousel";
+import CarouselSlide from "./Carousel";
 
 
 
@@ -22,7 +22,7 @@ const FileModel = () => {
                 </div>
             </section>
             <section className="carousel-wrapper">
-                <Carousel />
+                <CarouselSlide />
             </section>
                 
             {model_highlights ? (
