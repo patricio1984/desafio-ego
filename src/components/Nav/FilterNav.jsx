@@ -9,23 +9,20 @@ const FilterNav = () => {
         //state del hover del boton dropdown
         const [filterHovered, setFilterHovered] = useState(false);
         const [orderHovered, setOrderHovered] = useState(false);
-        const [toggleClass, setToggleClass] = useState(false)
 
         const toggleOrderHover = () => setOrderHovered(!orderHovered);
         
         const toggleFilterHover = () => {
             setFilterHovered(!filterHovered);
-            setToggleClass();
         }
-
+        
+        const segmentName = [...new Set(allModelos.map(item => item.segment))];        
         
         const filterSegment = e => {
     
             const segment = allModelos.filter(modelo => modelo.segment === e.target.name);
             
             guardarModelos(segment);
-
-            setToggleClass();
         }
 
         const filterAll = () => {
@@ -103,15 +100,15 @@ const FilterNav = () => {
                 <div className="container">
                     <h3 className="filter-element-title">Filtrar por</h3>
                     <button type="button" className="filter-element" onClick={filterAll}>Todos</button>
-                    <button type="button" className={`filter-element ${toggleClass ? 'filter-element:active' :''}`} name="Autos" onClick={filterSegment}>Autos</button>
-                    <button type="button" className="filter-element" name="Pickups y Comerciales" onClick={filterSegment}>Pickups y Comerciales</button>
-                    <button type="button" className="filter-element" name="SUVs y Crossovers" onClick={filterSegment}>SUVs y Crossovers</button>
+                    {segmentName.map(segment => (
+                        <button type="button" className="filter-element" name={segment} onClick={filterSegment}>{segment}</button>
+                    ))}
                 </div>
                 <ul className={filterHovered ? 'dropdown-menu-visible-first' : 'dropdown-menu-first'}>
                     <li><button type="button" className="dropdown-btn dropdown-btn-first" onClick={filterBtnAll}>Todos</button></li>
-                    <li><button type="button" className="dropdown-btn dropdown-btn-first" name="Autos" onClick={filterBtnSegment}>Autos</button></li>
-                    <li><button type="button" className="dropdown-btn" name="Pickups y Comerciales" onClick={filterBtnSegment}>Pickups y Comerciales</button></li>
-                    <li><button type="button" className="dropdown-btn" name="SUVs y Crossovers" onClick={filterBtnSegment}>SUVs y Crossovers</button></li>
+                    {segmentName.map(segment => (
+                        <li><button type="button" className="dropdown-btn" name={segment} onClick={filterBtnSegment}>{segment}</button></li>
+                    ))}
                 </ul> 
                 <div className="dropdown-container">
                     <button 
@@ -126,7 +123,7 @@ const FilterNav = () => {
                         <li><button type="button" className="dropdown-btn" onClick={sortOldToNew}>Más <span className="dropdown-span">nuevos</span> primero</button></li>
                         <li><button type="button" className="dropdown-btn" onClick={sortNewToOld}>Más <span className="dropdown-span">viejos</span> primero</button></li>
                     </ul>    
-                </div>     
+                </div> 
             </nav>
          );
     }
