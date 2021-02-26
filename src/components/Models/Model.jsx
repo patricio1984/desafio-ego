@@ -34,7 +34,7 @@ const Model = ({modelo}) => {
                     <p className={display === "btn-displayed" ? "card-name-active" : "card-name"}>{name}</p>
                     <p className="card-yearprice">{year} | $ {price}</p>
                 </div>
-                <img src={`https://challenge.agenciaego.tech${photo}`} className="card-image" alt={`Imagen de ${name}`} />
+                <img loading="lazy" src={`https://challenge.agenciaego.tech${photo}`} className="card-image" alt={`Imagen de ${name}`} width="auto" height="auto" />
                 <Link to={`/models/${modelo.id}`}><button 
                     type="button" 
                     className={width < breakpoint ? "btn-displayed" : display}

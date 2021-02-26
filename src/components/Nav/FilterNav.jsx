@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { ModelsContext } from "../../context/ModelsContext";
+import { v4 as uuidv4 } from 'uuid';
 
     
 const FilterNav = () => {
@@ -101,13 +102,13 @@ const FilterNav = () => {
                     <h3 className="filter-element-title">Filtrar por</h3>
                     <button type="button" className="filter-element" onClick={filterAll}>Todos</button>
                     {segmentName.map(segment => (
-                        <button type="button" className="filter-element" name={segment} onClick={filterSegment}>{segment}</button>
+                        <button key={uuidv4()} type="button" className="filter-element" name={segment} onClick={filterSegment}>{segment}</button>
                     ))}
                 </div>
                 <ul className={filterHovered ? 'dropdown-menu-visible-first' : 'dropdown-menu-first'}>
-                    <li><button type="button" className="dropdown-btn dropdown-btn-first" onClick={filterBtnAll}>Todos</button></li>
+                    <li key={uuidv4()}><button type="button" className="dropdown-btn dropdown-btn-first" onClick={filterBtnAll}>Todos</button></li>
                     {segmentName.map(segment => (
-                        <li><button type="button" className="dropdown-btn" name={segment} onClick={filterBtnSegment}>{segment}</button></li>
+                        <li key={uuidv4()}><button type="button" className="dropdown-btn" name={segment} onClick={filterBtnSegment}>{segment}</button></li>
                     ))}
                 </ul> 
                 <div className="dropdown-container">
@@ -117,11 +118,11 @@ const FilterNav = () => {
                         onClick={toggleOrderHover}
                     >Ordenar por<span className="caret-element">{orderHovered ? "ʌ" : "v" }</span></button>
                     <ul className={orderHovered ? 'dropdown-menu-visible-last' : 'dropdown-menu-last'}>
-                        <li><button type="button" className="dropdown-btn dropdown-btn-first" onClick={withoutFilter}>Nada</button></li>
-                        <li><button type="button" className="dropdown-btn" onClick={sortMinToMax}>De <span className="dropdown-span">menor</span> a <span className="dropdown-span">mayor</span> precio</button></li>
-                        <li><button type="button" className="dropdown-btn" onClick={sortMaxToMin}>De <span className="dropdown-span">mayor</span> a <span className="dropdown-span">menor</span> precio</button></li>
-                        <li><button type="button" className="dropdown-btn" onClick={sortOldToNew}>Más <span className="dropdown-span">nuevos</span> primero</button></li>
-                        <li><button type="button" className="dropdown-btn" onClick={sortNewToOld}>Más <span className="dropdown-span">viejos</span> primero</button></li>
+                        <li key={uuidv4()}><button type="button" className="dropdown-btn dropdown-btn-first" onClick={withoutFilter}>Nada</button></li>
+                        <li key={uuidv4()}><button type="button" className="dropdown-btn" onClick={sortMinToMax}>De <span className="dropdown-span">menor</span> a <span className="dropdown-span">mayor</span> precio</button></li>
+                        <li key={uuidv4()}><button type="button" className="dropdown-btn" onClick={sortMaxToMin}>De <span className="dropdown-span">mayor</span> a <span className="dropdown-span">menor</span> precio</button></li>
+                        <li key={uuidv4()}><button type="button" className="dropdown-btn" onClick={sortOldToNew}>Más <span className="dropdown-span">nuevos</span> primero</button></li>
+                        <li key={uuidv4()}><button type="button" className="dropdown-btn" onClick={sortNewToOld}>Más <span className="dropdown-span">viejos</span> primero</button></li>
                     </ul>    
                 </div> 
             </nav>

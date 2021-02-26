@@ -32,7 +32,7 @@ const FileModel = () => {
                         <h2 className="modeldata-title">{model_highlights[0].title}</h2>
                         <p className="modeldata-description">{model_highlights[0].content}</p>
                     </div>
-                    <img className="imgmodel-title2" src={`https://challenge.agenciaego.tech${model_highlights[0].image}`} alt={`Imagen de ${model_highlights[0].title}`} />
+                    <img loading="lazy" className="imgmodel-title2" src={`https://challenge.agenciaego.tech${model_highlights[0].image}`} alt={`Imagen de ${model_highlights[0].title}`} />
                 </div>
 
                 <div className="information-data">

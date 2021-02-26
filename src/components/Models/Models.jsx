@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import FilterNav from "../Nav/FilterNav";
 import Model from "./Model";
 import { ModelsContext } from "../../context/ModelsContext";
+import { v4 as uuidv4 } from 'uuid';
 
 const Models = () => {
     
@@ -15,7 +16,7 @@ const Models = () => {
             {modelos.map(modelo => (
                     
                         <Model 
-                            key={modelo.id}
+                            key={uuidv4()}
                             modelo={modelo}
                         />
             
