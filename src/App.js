@@ -5,7 +5,6 @@ import Navbar from "./components/Nav/Navbar";
 import Models from "./components/Models/Models";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import Logo from "./assets/img/logo.png";
-import ModelsProvider from "./context/ModelsContext";
 import Spinner from "./components/Spinner";
 
 
@@ -21,7 +20,7 @@ function App() {
   }, [])
 
   return (
-    <ModelsProvider>
+    <>
         { loading ?
            <Spinner loading={loading} />
         :
@@ -29,7 +28,9 @@ function App() {
         <Router>
             <div className="content-container">   
               <nav className="navbar">
-                  <img src={Logo} className="logo" alt="Ego Logo" />
+              <Link to={'/models'}>
+                <img src={Logo} className="logo" alt="Ego Logo" />
+              </Link>
                   <div className="menu-container">
                       <Link to={'/models'} className="menu-items">Modelos</Link>
                       <Link to={`/models/:id`} className="menu-items">Ficha del Modelo</Link>
@@ -48,7 +49,7 @@ function App() {
         </Router>
       </main>
         }
-    </ModelsProvider>
+    </>
   );
 }
 
