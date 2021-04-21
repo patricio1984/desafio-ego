@@ -79,7 +79,7 @@ main {
     margin-left: 123px;
 }
 
-.menu-items:hover, .menu-items:focus {
+.menu-items:hover, .menu-items-active {
     color: #eb0a1e;
     border-bottom: solid 4px #d0021b;
     padding: 0 33px;
